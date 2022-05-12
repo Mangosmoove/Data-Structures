@@ -1,0 +1,69 @@
+Arinah Karim, ankarim
+CSCI-C 343 / Fall 2020
+Lecture Notes 7
+9/15/2020
+
+SORTING APPLICATIONS
+-sorting is one of the most frequently performed computing tasks
+-often one part of a bigger algorithm
+-finding median will take O(n) if array is sorted
+-looking for a value takes O(logn) if array is sorted
+
+COMPARISON-BASED SORTING ALGORITHMS
+-we'll always use comparison operation when we sort
+-comparison based sorting: Insertion Sort and Bubble Sort
+-good to write the input, output, and the steps needed to take
+--input: A[0] .... A[n-1]
+--output: B[0] .... B[n-1]
+---w/ the sorted property (first element will be less or equal than 2nd element)
+-in the case of Insertion Sort, we have "in place" sorting
+--output of sorting algorithm is the same array as the input
+-invariant property: doesn't change during any step of the algorithm
+--main property either of an algorithm or of a data structure that is never(*) violated
+  during execution of an algorithm on a data structure
+---(*) e.g. if any operation during the execution of an algorithm violates the invariant,
+       then the algoirthm must restore the invariant right away
+-INSERTION SORT EXAMPLE
+	j
+ 8	2	4	9	3	6
+	compare 2 to 2
+	
+ 2	8	4	9	3	6
+
+ 		j
+ 2	8	4	9	3	6
+ compare 4 to 8
+
+
+ 2	4	8	9	3	6
+
+			j
+ 2	4	8	9	3	6
+ compare 9 & 8
+
+ 				j
+ 2	4	8	9	3	6
+ compare 3 to 9
+
+ 2	4	8	3	9	6
+ 
+ compare 3 to 8
+ 2	4	3	8	9	6
+
+ compare 4 to 3
+ 2	3	4	8	9	6
+
+					j
+ 2	3	4	8	9	6
+ compare 6 to 9
+
+ 2	3	4	8	6	9
+ 
+ 2	3	4	6	8	9
+ compare 6 to 8
+
+ 2	3	4	6	8	9
+
+--previous elements are already sorted so when you reach an instant
+  where the number ahead is bigger than the number behind -- an invariant property
+--
